@@ -1,0 +1,210 @@
+* {
+    font-family: sans-serif;
+}
+
+header {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    line-height: 50px;
+    width: 100%;
+    background-image: linear-gradient(to left, #0d9d9d, #167878);
+    color: #ffffff;
+    font-size: 1.4em;
+    box-sizing: border-box;
+    box-shadow: 0 2px 2px #073636;
+    top: 0;
+    left: 0;
+}
+
+header img.logo {
+    display: block;
+    margin: 0 10px 0 10px;
+    height: 50px;
+    float: left;
+}
+
+header img.menu {
+    display: block;
+    margin: 5px 5px 0 0;
+    height: 40px;
+    float: right;
+}
+
+main {
+    display: block;
+    width: 95%;
+    box-sizing: border-box;
+    margin: 60px auto 40px auto;
+    font-size: 1.2em;
+}
+
+main::after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+}
+
+table {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1em;
+}
+
+tr {
+    border: 1px solid #bbbbbb;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(231, 231, 231,0.3);
+}
+
+td, th {
+    padding: 8px 4px;
+    border: 1px solid #bbbbbb;
+}
+
+th {
+    background-color: rgba(22, 120, 120, 0.3);
+    color: rgb(22, 120, 120);
+}
+
+td:first-child {
+    text-align: center;
+}
+
+td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5) {
+    text-indent: 2px;
+}
+
+th:nth-child(3), th:nth-child(4), th:nth-child(5) {
+    display: none;
+}
+td:nth-child(3), td:nth-child(4), td:nth-child(5) {
+    display: none;
+}
+
+td:nth-child(6) {
+    text-align: center;
+}
+
+td:last-child {
+    text-align: center;
+    padding: 0;
+}
+
+td:last-child > img {
+    height: 30px;
+    position: relative;
+    top: 4px;
+}
+
+img.background {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0.3;
+    max-width: 40%;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form > p {
+    font-size: 1.0em;
+    font-weight: bold;
+    line-height: 40px;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 10px;
+}
+
+form > input[type=text], form > input[type=number] {
+    box-sizing: border-box;
+    border-radius: 0;
+    padding: 8px 8px;
+    border: 1px solid #bbbbbb;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    background-color: rgba(255,255,255,0.3);
+    width: 100%;
+}
+
+form > input[type=text]:disabled {
+    background-color: rgba(231, 231, 231,0.3);
+}
+
+/* CSS Input File */
+form > input[type="file"] {
+    display: none;
+}
+form > label {
+    display: block;
+    box-sizing: border-box;
+    border-radius: 0;
+    padding: 8px 8px;
+    border: 1px solid #bbbbbb;
+    margin-bottom: 10px;
+    font-size: 1em;
+    width: 100%;
+    cursor: pointer;
+    background-image: linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+    color: #555;
+}
+form > label > img {
+    display: block;
+    float: right;
+    height: 20px;
+}
+
+/* CSS Selector */
+form > select {
+   -webkit-appearance: button;
+   -webkit-border-radius: 0;
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(../img/seta.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #bbbbbb;
+   color: #555;
+   font-size: inherit;
+   margin-bottom: 10px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 100%;
+}
+
+form > button {
+    display: block;
+    float: right;
+    width: 50%;
+    color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 0;
+    padding: 8px 8px;
+    border: 0;
+    box-shadow: 2px 2px 2px #073636;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    background-color: #167878;
+}
+
+@media screen and (min-width: 600px) {
+    th:nth-child(3), th:nth-child(4), th:nth-child(5) {
+        display: table-cell;
+    }
+    td:nth-child(3), td:nth-child(4), td:nth-child(5) {
+        display: table-cell;
+    }
+
+    img.background {
+        max-width: 20%;
+    }
+}
