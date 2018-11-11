@@ -12,48 +12,87 @@
 		<header>
 			<img class="logo" src="img/favicon.png" alt="Logo" />
 			Hospital
-			<img class="menu" src="img/login.png" alt="Login" />
-			<img class="menu" src="img/logout.png" alt="Logout" />
-			<img class="menu" src="img/novo.png" alt="Novo" />
+			<img id="login" class="menu esconder" src="img/login.png" alt="Login" />
+			<img id="logout" class="menu esconder" src="img/logout.png" alt="Logout" />
+			<img id="novo" class="menu esconder" src="img/novo.png" alt="Novo" />
+			<img id="voltar" class="menu esconder" src="img/voltar.png" alt="Voltar" />
+			<img id="loading" class="menu esconder" src="img/loading.gif" alt="Loading" />
 		</header>
 
 		<main>
-			<table>
-				<tbody>
-					<tr>
-						<th>#</th>
-						<th>Medicamento</th>
-						<th>Laboratório</th>
-						<th>Preço</th>
-						<th>Tipo</th>
-						<th>Estoque</th>
-						<th></th>
-					</tr>
-				</tbody>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Novalgina</td>
-						<td>Lab1</td>
-						<td>R$ 10,00</td>
-						<td>Pomada</td>
-						<td>10</td>
-						<td><img src="img/alterar.png" alt="Alterar" /></td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>Outro</td>
-						<td>Lab2</td>
-						<td>R$ 20,00</td>
-						<td>Colutórios</td>
-						<td>20</td>
-						<td><img src="img/alterar.png" alt="Alterar" /></td>
-					</tr>
-				</tbody>
-			</table>
+			<div class="mensagem esconder"></div>
+			<div class="erro esconder"></div>
+
+			<div id="listagem" class="listagem">
+				<img src="img/loading-table.gif" alt="Carregando tabela" />
+				<table class="esconder">
+					<thead>
+						<tr>
+							<th>Medicamento</th>
+							<th>Laboratório</th>
+							<th>Preço</th>
+							<th>Tipo</th>
+							<th>Estoque</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+
+			<form id="formulario" class="esconder">
+                <p>Salvar Medicamento</p>
+                <input id="codigo" type="text" disabled placeholder="Código" />
+
+                <label for="imagem">
+                    <img src="img/upload.png" alt="Upload" />
+                    Imagem (apenas arquivos JPEG)
+                </label>
+                <input id="imagem" type="file" accept="image/jpeg" />
+				<img id="exibir-imagem" alt="Imagem" class="exibir-imagem" src="img/camera.png" />
+
+                <input id="nome" type="text" placeholder="Nome do Medicamento" />
+                <input id="principio" type="text" placeholder="Princípio Ativo" />
+                <input id="laboratorio" type="text" placeholder="Laboratório" />
+                <input id="estoque" type="number" placeholder="Estoque" />
+				<input id="preco" type="text" maxlength="9" placeholder="Preço" onkeypress="mascara(this,moeda)" />
+
+                <select id="classificacao">
+                    <option value="Medicamento">Medicamento</option>
+                    <option value="Perfumaria">Perfumaria</option>
+                </select>
+
+                <select id="tipo">
+                    <option value="Comprimido">Comprimido</option>
+                    <option value="Solução">Solução</option>
+                    <option value="Pomada">Pomada</option>
+                    <option value="Creme">Creme</option>
+                    <option value="Supositório">Supositório</option>
+                    <option value="Solúvel">Solúvel</option>
+                    <option value="Drágeas">Drágeas</option>
+                    <option value="Cápsula">Cápsula</option>
+                    <option value="Pastilha">Pastilha</option>
+                    <option value="Nasal">Nasal</option>
+                    <option value="Colírio">Colírio</option>
+                    <option value="Suspensão">Suspensão</option>
+                    <option value="Emulsão">Emulsão</option>
+                    <option value="Colutórios">Colutórios</option>
+                    <option value="Pasta">Pasta</option>
+                    <option value="Gel">Gel</option>
+                </select>
+
+                <button type="submit" class="salvar">Salvar</button>
+				<button type="submit" id="excluir" class="excluir esconder">Excluir</button>
+
+            </form>
 		</main>
 
 		<img src="img/figura-estilo.jpg" class="background" alt="background" />
+		<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+		<script type="text/javascript" src="js/utils.js"></script>
+		<script type="text/javascript" src="js/modelo.js"></script>
+		<script type="text/javascript" src="js/repositorio.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
 	</body>
 </html>

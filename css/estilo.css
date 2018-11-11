@@ -46,6 +46,51 @@ main::after {
     height: 0;
 }
 
+div.mensagem {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1em;
+    background-color: rgba(22, 120, 120, 0.3);
+    box-shadow: 1px 1px 1px rgb(22, 120, 120);
+    color: rgb(22, 120, 120);
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+div.erro {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1em;
+    color: #522f2f;
+    background-color: rgb(255, 184, 162);
+    box-shadow: 1px 1px 1px #522f2f;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+div.listagem {
+    box-shadow: 0px 0px 2px #919191;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+div.listagem > img {
+    box-sizing: border-box;
+    display: block;
+    border: 0;
+    padding: 0;
+    margin: 0 auto;
+    width: 200px;
+}
+
+div.listagem > img.esconder {
+    display: none;
+}
+
+header img.esconder, div.esconder, table.esconder, form.esconder, button.esconder {
+    display: none;
+}
+
 table {
     box-sizing: border-box;
     width: 100%;
@@ -70,22 +115,18 @@ th {
     color: rgb(22, 120, 120);
 }
 
-td:first-child {
-    text-align: center;
-}
-
-td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5) {
+td:nth-child(1), td:nth-child(2), td:nth-child(3), td:nth-child(4) {
     text-indent: 2px;
 }
 
-th:nth-child(3), th:nth-child(4), th:nth-child(5) {
+th:nth-child(2), th:nth-child(3), th:nth-child(4) {
     display: none;
 }
-td:nth-child(3), td:nth-child(4), td:nth-child(5) {
+td:nth-child(2), td:nth-child(3), td:nth-child(4) {
     display: none;
 }
 
-td:nth-child(6) {
+td:nth-child(5) {
     text-align: center;
 }
 
@@ -98,6 +139,11 @@ td:last-child > img {
     height: 30px;
     position: relative;
     top: 4px;
+    opacity: 0.1;
+}
+
+table.usuario-logado td:last-child > img {
+    opacity: 1;
 }
 
 img.background {
@@ -120,6 +166,13 @@ form > p {
     line-height: 40px;
     border-bottom: 1px solid #000000;
     margin-bottom: 10px;
+}
+
+form > img.exibir-imagem {
+    display: block;
+    margin: 0 auto 10px auto;
+    box-shadow: 0px 0px 2px #919191;
+    width: 90%;
 }
 
 form > input[type=text], form > input[type=number] {
@@ -148,7 +201,7 @@ form > label {
     padding: 8px 8px;
     border: 1px solid #bbbbbb;
     margin-bottom: 10px;
-    font-size: 1em;
+    font-size: 0.8em;
     width: 100%;
     cursor: pointer;
     background-image: linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
@@ -183,17 +236,27 @@ form > select {
 
 form > button {
     display: block;
-    float: right;
-    width: 50%;
-    color: #ffffff;
+    width: 40%;
     box-sizing: border-box;
     border-radius: 0;
     padding: 8px 8px;
     border: 0;
-    box-shadow: 2px 2px 2px #073636;
     margin-bottom: 10px;
     font-size: 0.9em;
+}
+
+form > button.excluir {
+    float: left;
+    color: #522f2f;
+    background-color: rgb(255, 184, 162);
+    box-shadow: 2px 2px 2px #522f2f;
+}
+
+form > button.salvar {
+    float: right;
+    color: #ffffff;
     background-color: #167878;
+    box-shadow: 2px 2px 2px #073636;
 }
 
 @media screen and (min-width: 600px) {
